@@ -1,5 +1,3 @@
-<!-- resources/views/auth/register.blade.php -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,11 +21,15 @@
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             width: 300px;
+            text-align: center;
         }
         h1 {
-            text-align: center;
             margin-bottom: 20px;
             color: #333;
+        }
+        .logo {
+            width: 100px; /* Ajusta el tamaño del logo */
+            margin-bottom: 20px;
         }
         label {
             display: block;
@@ -58,10 +60,20 @@
             color: red;
             margin-top: 10px;
         }
+        .login-link {
+            margin-top: 10px;
+            display: block;
+            text-decoration: none;
+            color: #007BFF; /* Color del enlace */
+        }
+        .login-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <img src="{{ asset('images/logo.png') }}" alt="Logo" class="logo">
         <h1>Registro</h1>
 
         <form method="POST" action="{{ route('register') }}">
@@ -90,6 +102,9 @@
             <button type="submit">Registrar</button>
         </form>
 
+        <!-- Enlace para redirigir a la página de inicio de sesión -->
+        <a href="{{ route('login') }}" class="login-link">¿Ya estás registrado? Inicia sesión</a>
+
         <!-- Mostrar errores si los hay -->
         @if ($errors->any())
             <div class="error-message">
@@ -103,3 +118,4 @@
     </div>
 </body>
 </html>
+

@@ -44,6 +44,7 @@
             background-color: #0056b3;
             border: none;
             transition: background-color 0.3s, box-shadow 0.3s;
+            font-weight: 700;
         }
         .btn-primary:hover {
             background-color: #004494;
@@ -56,6 +57,15 @@
         .info-message {
             margin-top: 20px;
             text-align: center;
+        }
+        h1 {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: #0056b3;
+        }
+        label {
+            font-weight: 600;
+            color: #333;
         }
     </style>
 </head>

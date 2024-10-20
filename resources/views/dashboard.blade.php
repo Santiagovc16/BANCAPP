@@ -43,6 +43,10 @@
         .btn-logout:hover {
             background-color: #c82333;
         }
+        .transactions {
+            display: none; /* Ocultamos las transacciones por defecto */
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -79,7 +83,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Transacciones</h5>
-                        <a href="#" class="btn btn-primary">Ver Movimientos</a>
+                        <a href="#" class="btn btn-primary" id="show-transactions">Ver Movimientos</a>
                     </div>
                 </div>
             </div>
@@ -93,9 +97,35 @@
             </div>
         </div>
 
+        <!-- Sección para mostrar las transacciones -->
+        <div class="transactions" id="transactions-section">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Historial de Transacciones</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item">Compra tarjeta débito: $100,000</li>
+                        <li class="list-group-item">Compra tarjeta débito: $20,000</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
         <div class="footer">
             <p>&copy; 2024 BancApp. Todos los derechos reservados.</p>
         </div>
     </div>
+
+    <script>
+        // JavaScript para mostrar las transacciones
+        document.getElementById('show-transactions').addEventListener('click', function(event) {
+            event.preventDefault(); // Evita que el enlace recargue la página
+            var transactions = document.getElementById('transactions-section');
+            if (transactions.style.display === "none") {
+                transactions.style.display = "block"; // Mostrar las transacciones
+            } else {
+                transactions.style.display = "none"; // Ocultar si ya están visibles
+            }
+        });
+    </script>
 </body>
 </html>

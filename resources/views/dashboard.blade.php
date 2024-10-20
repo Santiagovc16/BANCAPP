@@ -9,7 +9,15 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <h1 class="text-center">Hola Mundo</h1>
+                    <h1>{{ __("¡Hola, bienvenido!") }}</h1>
+                    <nav class="mt-4">
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-blue-600">Inicio</a></li>
+                            <li><a href="#" class="text-blue-600">Menú</a></li>
+                            <li><a href="#" class="text-blue-600">Transacciones</a></li>
+                            <li><a href="#" class="text-blue-600">Saldo actualmente</a></li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>

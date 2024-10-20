@@ -111,7 +111,7 @@
         </div>
 
         <div class="footer">
-            <p>&copy; 2024 BancApp. Todos los derechos reservados.</p>
+            <p>&copy; 2025 BancApp. Todos los derechos reservados.</p>
         </div>
     </div>
 

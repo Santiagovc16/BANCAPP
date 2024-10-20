@@ -8,6 +8,9 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
 // Ruta para el dashboard
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 

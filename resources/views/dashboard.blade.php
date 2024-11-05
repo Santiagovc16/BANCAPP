@@ -1,3 +1,5 @@
+<!-- resources/views/dashboard.blade.php -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,7 +86,7 @@
 <body>
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="#">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo"> ¡Hola, bienvenido!
+            <img src="{{ asset('images/logo.png') }}" alt="Logo"> ¡Hola, {{ $user->name }}!
         </a>
         <div class="ml-auto">
             <form id="logout-form" action="{{ route('logout') }}" method="POST">
@@ -132,13 +134,13 @@
                             <strong>Fecha:</strong> 20/10/2024 <br>
                             <strong>Hora:</strong> 14:35 <br>
                             <strong>Lugar:</strong> Alterios <br>
-                            <strong>Valor:</strong> $100,000
+                            <strong>Valor:</strong> \$100,000
                         </li>
                         <li class="list-group-item">
                             <strong>Fecha:</strong> 20/10/2024 <br>
                             <strong>Hora:</strong> 09:12 <br>
                             <strong>Lugar:</strong> Alterios <br>
-                            <strong>Valor:</strong> $20,000
+                            <strong>Valor:</strong> \$20,000
                         </li>
                     </ul>
                 </div>

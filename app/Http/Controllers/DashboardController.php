@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard'); // Asegúrate de tener la vista dashboard en resources/views/dashboard.blade.php
+        $user = Auth::user(); // Obtener el usuario autenticado
+        return view('dashboard', compact('user')); // Pasar el usuario a la vista
     }
 }
-

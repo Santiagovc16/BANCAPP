@@ -69,3 +69,10 @@ Route::get('/pago-servicios', function () {
 Route::get('/transferencias', function () {
     return view('transferencias');
 })->name('transferencias');
+Route::get('/historial-transferencias', function () {
+    return view('historial_transferencias');
+})->name('historial_transferencias');
+use App\Http\Controllers\TransferenciaController;
+
+Route::post('/transferir', [TransferenciaController::class, 'transferir'])->name('transferir');
+Route::get('/historial-transferencias', [TransferenciaController::class, 'historial'])->name('historial_transferencias');

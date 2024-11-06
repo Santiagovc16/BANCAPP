@@ -43,3 +43,9 @@ Route::get('/transactions/transfer', function () {
 Route::get('/transactions/history', function () {
     return view('transactions.history');
 })->name('transactions.history');
+Route::get('/menu', function () {
+    return view('menu');
+})->name('menu');
+Route::get('/consultar-saldo', function () {
+    return view('consultar_saldo');
+})->name('consultar_saldo');

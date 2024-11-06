@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+=<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -93,24 +93,26 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Menú</h5>
-                        <a href="#" class="btn btn-primary">Ir</a>
+                        <a href="{{ route('menu') }}" class="btn btn-primary">Ir</a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Transacciones</h5>
-                        <!-- Enlace actualizado a la página de transacciones -->
                         <a href="{{ route('transactions') }}" class="btn btn-primary">Ver Movimientos</a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Saldo Actualmente</h5>
-                        <a href="#" class="btn btn-primary">Consultar</a>
+                        <!-- Enlace actualizado al consultar saldo -->
+                        <a href="{{ route('consultar_saldo') }}" class="btn btn-primary">Consultar</a>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-=<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,16 +7,16 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fa;
+            background-color: #f3f4f6;
             font-family: 'Montserrat', sans-serif;
         }
         .navbar {
             background-color: #007BFF;
-            padding: 10px;
+            padding: 15px;
         }
         .navbar-brand {
             color: white;
-            font-weight: 600;
+            font-weight: bold;
             display: flex;
             align-items: center;
         }
@@ -31,18 +31,25 @@
         .nav-item a:hover {
             color: #d1e7ff;
         }
+        .dashboard-container {
+            padding-top: 40px;
+        }
         .card {
             margin-top: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             border: none;
-            border-radius: 12px;
+            border-radius: 15px;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
         }
         .card-body {
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
         }
         .card-title {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             font-weight: 600;
             color: #343a40;
             margin-bottom: 15px;
@@ -50,24 +57,27 @@
         .btn-primary {
             background-color: #007BFF;
             border: none;
-            border-radius: 20px;
-            padding: 10px 20px;
+            border-radius: 25px;
+            padding: 12px 24px;
             font-size: 1rem;
         }
         .btn-primary:hover {
             background-color: #0056b3;
         }
         .footer {
-            margin-top: 30px;
-            text-align: center;
+            margin-top: 50px;
+            padding: 20px 0;
+            background-color: #f3f4f6;
             color: #6c757d;
             font-size: 0.9rem;
+            text-align: center;
         }
         .btn-logout {
             background-color: #dc3545;
             color: white;
             border-radius: 20px;
             padding: 8px 16px;
+            transition: background-color 0.2s;
         }
         .btn-logout:hover {
             background-color: #c82333;
@@ -75,6 +85,7 @@
     </style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
         <a class="navbar-brand" href="#">
             <img src="{{ asset('images/logo.png') }}" alt="Logo"> ¡Hola, {{ $user->name }}!
@@ -87,40 +98,36 @@
         </div>
     </nav>
 
-    <div class="container">
+    <!-- Dashboard Content -->
+    <div class="container dashboard-container">
         <div class="row justify-content-center">
-            <div class="col-md-4">
+            <!-- Menú Principal -->
+            <div class="col-md-5">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Menú</h5>
-                        <a href="{{ route('menu') }}" class="btn btn-primary">Ir</a>
+                        <h5 class="card-title">Menú Principal</h5>
+                        <p class="text-muted">Accede a todas las funcionalidades bancarias</p>
+                        <a href="{{ route('menu') }}" class="btn btn-primary">Ir al Menú</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Transacciones</h5>
-                        <a href="{{ route('transactions') }}" class="btn btn-primary">Ver Movimientos</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
+            <!-- Saldo Actualmente -->
+            <div class="col-md-5">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Saldo Actualmente</h5>
-                        <!-- Enlace actualizado al consultar saldo -->
-                        <a href="{{ route('consultar_saldo') }}" class="btn btn-primary">Consultar</a>
+                        <p class="text-muted">Consulta tu saldo disponible y otros detalles</p>
+                        <a href="{{ route('consultar_saldo') }}" class="btn btn-primary">Consultar Saldo</a>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="footer">
-            <p>&copy; 2025 BancApp. Todos los derechos reservados.</p>
-        </div>
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 BancApp. Todos los derechos reservados.</p>
     </div>
 </body>
 </html>

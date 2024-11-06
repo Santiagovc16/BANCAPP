@@ -27,4 +27,12 @@
 <script>
     function pagarServicio() {
         const servicio = document.getElementById('servicio').value;
-        const monto = document.getElementById('monto-servici
+        const monto = document.getElementById('monto-servicio').value;
+        if (monto && monto > 0) {
+            alert(`Has pagado $${monto} por el servicio de ${servicio}.`);
+        } else {
+            alert("Por favor, ingresa un monto válido.");
+        }
+    }
+</script>
+@endsection

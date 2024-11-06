@@ -49,3 +49,23 @@ Route::get('/menu', function () {
 Route::get('/consultar-saldo', function () {
     return view('consultar_saldo');
 })->name('consultar_saldo');
+#vista de cuentas
+Route::get('/cuentas', function () {
+    return view('cuentas');
+})->name('cuentas');
+#menu de vistas principal 
+Route::get('/prestamos', function () {
+    return view('prestamos');
+})->name('prestamos');
+
+Route::get('/tarjetas-credito', function () {
+    return view('tarjetas_credito');
+})->name('tarjetas_credito');
+
+Route::get('/pago-servicios', function () {
+    return view('pago_servicios');
+})->name('pago_servicios');
+
+Route::get('/transferencias', function () {
+    return view('transferencias');
+})->name('transferencias');

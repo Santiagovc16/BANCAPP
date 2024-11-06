@@ -1,5 +1,3 @@
-<!-- resources/views/dashboard.blade.php -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,13 +72,6 @@
         .btn-logout:hover {
             background-color: #c82333;
         }
-        .transactions {
-            display: none;
-            margin-top: 20px;
-        }
-        .list-group-item {
-            font-size: 0.9rem;
-        }
     </style>
 </head>
 <body>
@@ -110,7 +101,8 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Transacciones</h5>
-                        <a href="#" class="btn btn-primary" id="show-transactions">Ver Movimientos</a>
+                        <!-- Enlace actualizado a la página de transacciones -->
+                        <a href="{{ route('transactions') }}" class="btn btn-primary">Ver Movimientos</a>
                     </div>
                 </div>
             </div>
@@ -124,41 +116,9 @@
             </div>
         </div>
 
-        <!-- Sección para mostrar las transacciones -->
-        <div class="transactions" id="transactions-section">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Historial de Transacciones</h5>
-                    <ul class="list-group">
-                        <li class="list-group-item">
-                            <strong>Fecha:</strong> 20/10/2024 <br>
-                            <strong>Hora:</strong> 14:35 <br>
-                            <strong>Lugar:</strong> Alterios <br>
-                            <strong>Valor:</strong> \$100,000
-                        </li>
-                        <li class="list-group-item">
-                            <strong>Fecha:</strong> 20/10/2024 <br>
-                            <strong>Hora:</strong> 09:12 <br>
-                            <strong>Lugar:</strong> Alterios <br>
-                            <strong>Valor:</strong> \$20,000
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
         <div class="footer">
             <p>&copy; 2025 BancApp. Todos los derechos reservados.</p>
         </div>
     </div>
-
-    <script>
-        // JavaScript para mostrar las transacciones
-        document.getElementById('show-transactions').addEventListener('click', function(event) {
-            event.preventDefault();
-            var transactions = document.getElementById('transactions-section');
-            transactions.style.display = transactions.style.display === "none" ? "block" : "none";
-        });
-    </script>
 </body>
 </html>

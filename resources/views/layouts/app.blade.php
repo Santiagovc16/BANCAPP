@@ -8,9 +8,10 @@
 </head>
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-gray-100">
-        <div>
-            {{ $slot }}
-        </div>
+    <div>
+    @yield('content')
+</div>
+
     </div>
 </body>
 </html>

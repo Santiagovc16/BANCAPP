@@ -8,7 +8,6 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
-
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Ruta para el dashboard
@@ -24,3 +23,23 @@ Route::post('/register', [RegisteredUserController::class, 'store']);
 
 // Ruta para cerrar sesión
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
+// Ruta para la vista de transacciones
+Route::get('/transactions', function () {
+    return view('transactions');
+})->name('transactions');
+Route::get('/transactions/deposit', function () {
+    return view('transactions.deposit');
+})->name('transactions.deposit');
+
+Route::get('/transactions/withdraw', function () {
+    return view('transactions.withdraw');
+})->name('transactions.withdraw');
+
+Route::get('/transactions/transfer', function () {
+    return view('transactions.transfer');
+})->name('transactions.transfer');
+
+Route::get('/transactions/history', function () {
+    return view('transactions.history');
+})->name('transactions.history');

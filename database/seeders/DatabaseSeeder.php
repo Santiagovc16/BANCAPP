@@ -13,6 +13,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        // Call other seeders
+        $this->call(CuentaSeeder::class);
+
+        // Optionally create some users
         // User::factory(10)->create();
 
         User::factory()->create([

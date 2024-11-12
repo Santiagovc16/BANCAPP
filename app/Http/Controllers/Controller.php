@@ -7,6 +7,7 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use App\Models\Cuenta;
 
 abstract class Controller
 {
@@ -42,5 +43,14 @@ abstract class Controller
     protected function handleNotFound(ModelNotFoundException $e): JsonResponse
     {
         return $this->errorResponse('Resource not found', Response::HTTP_NOT_FOUND);
+    }
+
+    public function index()
+    {
+        // Obtener las cuentas del usuario autenticado
+        $cuentas = Cuenta::where('user_id', auth()->id())->get();
+
+        // Retornar la vista con los datos de las cuentas
+        return view('cuentas.index', compact('cuentas'));
     }
 }

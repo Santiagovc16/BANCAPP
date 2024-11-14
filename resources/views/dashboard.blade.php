@@ -105,29 +105,11 @@
             <div class="col-md-5">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Menú Principal</h5>
+                        <h5 class="card-title">Menú BANCARIO</h5>
                         <p class="text-muted">Accede a todas las funcionalidades bancarias</p>
                         <a href="{{ route('menu') }}" class="btn btn-primary">Ir al Menú</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Saldo Actualmente -->
-            <div class="col-md-5">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Saldo Actualmente</h5>
-                        <p class="text-muted">Consulta tu saldo disponible y otros detalles</p>
-                        <a href="{{ route('consultar_saldo') }}" class="btn btn-primary">Consultar Saldo</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        <p>&copy; 2025 BancApp. Todos los derechos reservados.</p>
-    </div>
-</body>
-</html>
+            

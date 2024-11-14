@@ -13,11 +13,15 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16">
                     <div class="flex">
-                        <!-- Logo de la aplicación -->
+                        <!-- Cerrar Sesión -->
                         <div class="flex-shrink-0 flex items-center">
-                            <a href="{{ url('/') }}" class="text-lg font-semibold text-gray-800">
-                                {{ config('app.name', 'BancApp') }}
+                            <a href="{{ route('logout') }}" class="text-lg font-semibold text-red-600"
+                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                Cerrar Sesión
                             </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                                @csrf
+                            </form>
                         </div>
 
                         <!-- Enlaces del menú -->

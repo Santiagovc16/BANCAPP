@@ -177,7 +177,7 @@
                 clearInterval(countdownInterval);
                 window.location.href = "{{ route('menu') }}";
             }
-        }, 100000);
+        }, 1000);
     </script>
 
     <!-- Footer -->

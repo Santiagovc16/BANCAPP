@@ -8,31 +8,31 @@
         </a>
     </div>
 
-    <h2 class="text-3xl font-semibold text-blue-900 mb-8 text-center">Préstamos</h2>
+    <h2 class="text-3xl font-semibold text-blue-900 mb-8 text-center">Créditos</h2>
 
     <div class="bg-white shadow-lg rounded-lg p-8 mb-6">
-        <!-- Estado del Préstamo -->
-        <h3 class="text-xl font-semibold text-gray-800">Préstamos Actuales</h3>
+        <!-- Estado del Crédito -->
+        <h3 class="text-xl font-semibold text-gray-800">Créditos Actuales</h3>
         <p class="text-gray-600">Monto: $50,000</p>
         <p class="text-gray-600">Interés: 8% anual</p>
         <p class="text-gray-600">Plazo: 24 meses</p>
     </div>
 
-    <!-- Aplicar para un Nuevo Préstamo -->
+    <!-- Aplicar para un Nuevo Crédito -->
     <div class="bg-white shadow-lg rounded-lg p-8">
-        <h3 class="text-xl font-semibold text-gray-800 mb-4">Aplicar para un Nuevo Préstamo</h3>
-        <input type="number" id="monto-prestamo" placeholder="Monto del préstamo" class="w-full p-2 rounded text-gray-700 mb-4">
-        <button onclick="aplicarPrestamo()" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Aplicar para un Nuevo Crédito</h3>
+        <input type="number" id="monto-credito" placeholder="Monto del crédito" class="w-full p-2 rounded text-gray-700 mb-4">
+        <button onclick="aplicarCredito()" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700">
             Aplicar
         </button>
     </div>
 </div>
 
 <script>
-    function aplicarPrestamo() {
-        const monto = document.getElementById('monto-prestamo').value;
+    function aplicarCredito() {
+        const monto = document.getElementById('monto-credito').value;
         if (monto && monto > 0) {
-            alert(`Has aplicado para un préstamo de $${monto}`);
+            alert(`Has aplicado para un crédito de $${monto}`);
         } else {
             alert("Por favor, ingresa un monto válido.");
         }

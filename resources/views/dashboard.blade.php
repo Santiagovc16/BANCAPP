@@ -72,16 +72,6 @@
             font-size: 0.9rem;
             text-align: center;
         }
-        .btn-logout {
-            background-color: #dc3545;
-            color: white;
-            border-radius: 20px;
-            padding: 8px 16px;
-            transition: background-color 0.2s;
-        }
-        .btn-logout:hover {
-            background-color: #c82333;
-        }
     </style>
 </head>
 <body>
@@ -90,12 +80,6 @@
         <a class="navbar-brand" href="#">
             <img src="{{ asset('images/logo.png') }}" alt="Logo"> ¡Hola, {{ $user->name }}!
         </a>
-        <div class="ml-auto">
-            <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                @csrf
-                <button type="submit" class="btn btn-logout">Cerrar Sesión</button>
-            </form>
-        </div>
     </nav>
 
     <!-- Dashboard Content -->
@@ -111,5 +95,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</body>
+</html>
 
             

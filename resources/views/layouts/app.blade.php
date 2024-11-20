@@ -13,23 +13,9 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16">
                     <div class="flex">
-                        <!-- Cerrar Sesión -->
-                        <div class="flex-shrink-0 flex items-center">
-                            <a href="{{ route('logout') }}" class="text-lg font-semibold text-red-600"
-                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                Cerrar Sesión
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                                @csrf
-                            </form>
-                        </div>
-
                         <!-- Enlaces del menú -->
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <a href="{{ route('cuentas.index') }}" class="text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700 transition duration-150 ease-in-out">
-                                Cuentas
-                            </a>
-                            <!-- Puedes añadir más enlaces aquí -->
+                            <!-- Aquí puedes añadir más enlaces si es necesario -->
                         </div>
                     </div>
                 </div>

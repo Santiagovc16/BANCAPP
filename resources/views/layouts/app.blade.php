@@ -8,18 +8,30 @@
 </head>
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-gray-100">
-        <!-- Barra de Navegación -->
-        <nav class="bg-white shadow">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between h-16">
-                    <div class="flex">
-                        <!-- Enlaces del menú -->
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <!-- Aquí puedes añadir más enlaces si es necesario -->
-                        </div>
-                    </div>
-                </div>
+        <!-- Menú de Navegación Principal con Funcionalidades -->
+        <header class="bg-white shadow p-4">
+            <div class="container mx-auto flex items-center">
+                <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-10 mr-4">
+                <h1 class="text-xl font-bold text-left">BancApp</h1>
             </div>
+        </header>
+
+        <!-- Menú de Navegación Principal -->
+        <nav class="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-4 rounded-lg shadow-xl flex justify-between items-center px-8 mt-4">
+            <ul class="flex flex-wrap items-center font-medium tracking-wide text-xs space-x-4">
+                <li class="pr-4"><a href="{{ route('cuentas.index') }}" class="hover:underline hover:text-blue-300 transition duration-200 ease-in-out">Cuentas</a></li>
+                <li class="border-r border-gray-400 pr-4"><a href="{{ route('prestamos') }}" class="hover:underline hover:text-blue-300 transition duration-200 ease-in-out">Préstamos</a></li>
+                <li class="pr-4"><a href="{{ route('transferencias') }}" class="hover:underline hover:text-blue-300 transition duration-200 ease-in-out">Transferencias</a></li>
+                <li class="border-r border-gray-400 pr-4"><a href="{{ route('pago_servicios') }}" class="hover:underline hover:text-blue-300 transition duration-200 ease-in-out">Pagos</a></li>
+                <li class="pr-4"><a href="{{ route('tarjetas_credito') }}" class="hover:underline hover:text-blue-300 transition duration-200 ease-in-out">Tarjetas de Crédito</a></li>
+                <li class="border-r border-gray-400 pr-4"><a href="#" class="hover:underline hover:text-blue-300 transition duration-200 ease-in-out">Créditos</a></li>
+                <li class="border-r border-gray-400 pr-4"><a href="#" class="hover:underline hover:text-blue-300 transition duration-200 ease-in-out">Asesoría</a></li>
+            </ul>
+            <div class="text-right text-xs text-gray-200">
+                <p class="mb-1">Su última visita fue: Lunes 18 de Noviembre de 2024 7:50:48 PM</p>
+                <p>Fecha y hora actual: Martes 19 de Noviembre de 2024 8:43:55 PM</p>
+            </div>
+            <a href="{{ route('logout') }}" class="bg-red-500 text-white font-medium text-xs px-3 py-1.5 rounded-lg transition duration-300 ease-in-out hover:bg-red-600 ml-4">Salir</a>
         </nav>
 
         <!-- Contenido principal -->

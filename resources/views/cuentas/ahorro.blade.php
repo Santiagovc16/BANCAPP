@@ -67,10 +67,11 @@
 </div>
 
 <script>
-    let saldo = 0;
+    // Variable global de saldo para sincronizar entre diferentes servicios
+    let saldoGlobal = 5000.00; // Saldo inicial para todas las cuentas
 
     function actualizarSaldo() {
-        document.getElementById('saldo').textContent = `$${saldo.toFixed(2)}`;
+        document.getElementById('saldo').textContent = `$${saldoGlobal.toFixed(2)}`;
     }
 
     function agregarHistorial(tipo, monto) {
@@ -84,7 +85,7 @@
     function depositar() {
         const monto = parseFloat(document.getElementById('deposito').value);
         if (!isNaN(monto) && monto > 0) {
-            saldo += monto;
+            saldoGlobal += monto;
             actualizarSaldo();
             agregarHistorial('Depósito', monto);
             document.getElementById('deposito').value = '';
@@ -96,8 +97,8 @@
     function retirar() {
         const monto = parseFloat(document.getElementById('retiro').value);
         if (!isNaN(monto) && monto > 0) {
-            if (monto <= saldo) {
-                saldo -= monto;
+            if (monto <= saldoGlobal) {
+                saldoGlobal -= monto;
                 actualizarSaldo();
                 agregarHistorial('Retiro', monto);
                 document.getElementById('retiro').value = '';

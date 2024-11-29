@@ -12,6 +12,17 @@
     </div>
     <h2 class="text-3xl font-bold text-blue-900 mb-8 text-center">Transferencias</h2>
 
+    <!-- Simulación del Saldo -->
+    <div class="bg-gray-100 text-gray-800 shadow-lg rounded-lg p-8 mb-6">
+        <div class="flex justify-between items-center">
+            <div>
+                <h3 class="text-xl font-semibold mb-1">Saldo de Cuenta</h3>
+                <p class="text-gray-600">Número de Cuenta: 1234-5678-9012-3456</p>
+            </div>
+            <p id="saldo" class="text-2xl font-bold text-gray-900">$5,000.00</p>
+        </div>
+    </div>
+
     <!-- Formulario de transferencia -->
     <div class="bg-white shadow-lg rounded-lg p-8 mb-6">
         <h3 class="text-xl font-semibold text-gray-800 mb-4">Transferencia a otra Cuenta</h3>
@@ -22,36 +33,55 @@
         </button>
     </div>
 
-    <!-- Botón Historial de Transferencias -->
-    <div class="text-center mt-8">
-        <a href="{{ route('historial_transferencias') }}" class="bg-gray-800 text-white px-6 py-2 rounded-full hover:bg-gray-900">
-            Historial de Transferencias
-        </a>
+    <!-- Historial de Transferencias -->
+    <div class="bg-white shadow-lg rounded-lg p-8 mt-8">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Historial de Transferencias</h3>
+        <ul id="historial-transferencias" class="list-none space-y-2 text-gray-700">
+            <!-- Las transferencias aparecerán aquí -->
+        </ul>
     </div>
 </div>
 
 <script>
+    let saldo = 5000.00;
+
+    function actualizarSaldo() {
+        document.getElementById('saldo').textContent = `$${saldo.toFixed(2)}`;
+    }
+
+    function agregarHistorialTransferencia(cuenta, monto) {
+        const historial = document.getElementById('historial-transferencias');
+        const item = document.createElement('li');
+        item.className = "border-b border-gray-300 py-2 flex justify-between";
+        item.innerHTML = `<span>Transferencia a la cuenta ${cuenta}</span><span>-$${monto.toFixed(2)}</span>`;
+        historial.prepend(item);
+    }
+
     function realizarTransferencia() {
         const cuenta = document.getElementById('cuenta-destino').value;
-        const monto = document.getElementById('monto-transferencia').value;
+        const monto = parseFloat(document.getElementById('monto-transferencia').value);
 
-        if (cuenta && monto && monto > 0) {
-            // Guardar la transferencia en el historial de sesión
-            let historial = JSON.parse(sessionStorage.getItem('historialTransferencias')) || [];
-            const nuevaTransferencia = {
-                fecha: new Date().toLocaleString(),
-                cuenta: cuenta,
-                monto: monto
-            };
-            historial.push(nuevaTransferencia);
-            sessionStorage.setItem('historialTransferencias', JSON.stringify(historial));
+        if (cuenta && !isNaN(monto) && monto > 0) {
+            if (monto <= saldo) {
+                // Realizar la transferencia
+                saldo -= monto;
+                actualizarSaldo();
+                agregarHistorialTransferencia(cuenta, monto);
 
-            alert(`Has transferido $${monto} a la cuenta ${cuenta}.`);
-            document.getElementById('cuenta-destino').value = '';
-            document.getElementById('monto-transferencia').value = '';
+                // Alerta de confirmación
+                alert(`Has transferido $${monto.toFixed(2)} a la cuenta ${cuenta}.`);
+                
+                // Limpiar campos
+                document.getElementById('cuenta-destino').value = '';
+                document.getElementById('monto-transferencia').value = '';
+            } else {
+                alert("Saldo insuficiente para realizar la transferencia.");
+            }
         } else {
             alert("Por favor, ingresa un número de cuenta y un monto válido.");
         }
     }
+
+    actualizarSaldo();
 </script>
 @endsection

@@ -42,7 +42,7 @@
                 <li class="pr-4"><a href="{{ route('transferencias') }}" class="hover:underline hover:text-blue-300 transition duration-200 ease-in-out">Transferencias</a></li>
                 <li class="border-r border-gray-400 pr-4"><a href="{{ route('pago_servicios') }}" class="hover:underline hover:text-blue-300 transition duration-200 ease-in-out">Pagos</a></li>
                 <li class="pr-4"><a href="{{ route('tarjetas_credito') }}" class="hover:underline hover:text-blue-300 transition duration-200 ease-in-out">Tarjetas de Crédito</a></li>
-                <li class="border-r border-gray-400 pr-4"><a href="#" class="hover:underline hover:text-blue-300 transition duration-200 ease-in-out">Asesoría</a></li>
+                
             </ul>
             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="bg-red-500 text-white font-medium text-xs px-3 py-1.5 rounded-lg transition duration-300 ease-in-out hover:bg-red-600 ml-4">Cerrar sesión</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

@@ -5,6 +5,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\TransferenciaController;
 use App\Http\Controllers\CuentaController; // Asegúrate de importar CuentaController aquí
+use App\Http\Controllers\UserController;
 
 // Redirige la página principal al login
 Route::get('/', function () {

@@ -56,4 +56,10 @@ class CuentaController extends Controller
         // Redirigir a la página de cuentas con un mensaje de éxito
         return redirect()->route('cuentas.index')->with('success', 'Retiro realizado exitosamente.');
     }
+
+    public function simularTransaccion()
+    {
+        // Retorna la vista para simular transacciones
+        return view('cuentas.ahorro');
+    }
 }

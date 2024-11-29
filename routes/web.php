@@ -80,3 +80,6 @@ Route::post('/transferir', [TransferenciaController::class, 'transferir'])->name
 // Rutas para depósitos y retiros
 Route::post('/cuentas/{id}/depositar', [CuentaController::class, 'depositar'])->name('cuentas.depositar')->middleware('auth');
 Route::post('/cuentas/{id}/retirar', [CuentaController::class, 'retirar'])->name('cuentas.retirar')->middleware('auth');
+
+
+Route::get('/cuentas/ahorro', [CuentaController::class, 'simularTransaccion'])->name('cuentas.ahorro');

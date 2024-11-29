@@ -25,14 +25,12 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-            'rol' => ['required', 'in:usuario,administrador'], // Validación para el campo rol
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'rol' => $request->rol, // Guardar el rol del usuario
         ]);
 
         Auth::login($user);
@@ -47,7 +45,6 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'], // Asegúrate de que esto esté presente
-            'rol' => ['required', 'in:usuario,administrador'], // Validación para el campo rol
         ]);
     }
 }

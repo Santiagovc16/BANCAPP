@@ -53,7 +53,7 @@ Route::get('/consultar-saldo', function () {
 })->name('consultar_saldo')->middleware('auth');
 
 // Ruta para ver las cuentas utilizando el controlador CuentaController
-Route::get('/cuentas', [CuentaController::class, 'index'])->name('cuentas.index')->middleware('auth');
+Route::get('/cuentas', [CuentaController::class, 'index'])->middleware('can:cuentas.index')->name('cuentas.index');
 
 // Menú de vistas principal
 Route::get('/prestamos', function () {

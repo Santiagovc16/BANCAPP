@@ -78,8 +78,8 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
             <div class="form-group">
-                <label for="username">Usuario:</label>
-                <input type="text" class="form-control" id="username" name="username" required>
+                <label for="name">Usuario:</label>
+                <input type="text" class="form-control" id="name" name="name" required>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
@@ -95,13 +95,6 @@
             </div>
             <button type="submit" class="btn btn-primary btn-block">Registrar</button>
         </form>
-        <div class="mt-4">
-    <label for="rol" class="block font-medium text-sm text-gray-700">Rol</label>
-    <select id="rol" name="rol" class="form-input rounded-md shadow-sm mt-1 block w-full">
-        <option value="usuario">Usuario</option>
-        <option value="administrador">Administrador</option>
-    </select>
-</div>
 
         @if ($errors->any())
             <div class="error-message">

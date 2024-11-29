@@ -16,12 +16,11 @@ class DatabaseSeeder extends Seeder
         // Call other seeders
         $this->call(CuentaSeeder::class);
 
+        $this->call(RoleSeeder::class);
+
+        $this->call(UserSeeder::class);
+
         // Optionally create some users
         // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
     }
 }

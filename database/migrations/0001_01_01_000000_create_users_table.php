@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable(); // Permitir valores nulos
             $table->string('email')->unique();
-            $table->string('rol')->default('usuario'); // Valores: 'usuario' o 'administrador'
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
